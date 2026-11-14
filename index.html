@@ -23,6 +23,15 @@
     <input id="search" type="search" placeholder="Search name, text, company…">
     <select id="objectFilter"><option value="">All objects</option></select>
     <select id="seriesFilter"><option value="">All series</option></select>
+    <select id="sortBy" aria-label="Sort stickers">
+      <option value="catalog">Sort: Catalog number</option>
+      <option value="az">Sort: A to Z</option>
+      <option value="za">Sort: Z to A</option>
+      <option value="oldest">Sort: Oldest first</option>
+      <option value="newest">Sort: Newest first</option>
+      <option value="series">Sort: Series</option>
+      <option value="object">Sort: Object</option>
+    </select>
   </section>
 
   <!-- The grid of sticker cards gets filled in by app.js -->
@@ -30,18 +39,19 @@
 
   <!-- Detail popup (hidden until you click a card) -->
   <dialog id="detail">
-    <button id="close" aria-label="Close">×</button>
+    <button id="close" class="x" aria-label="Close">×</button>
+    <button id="dBack" class="back" hidden></button>
     <div class="detail-body">
       <img id="dSticker" alt="">
       <div id="dInfo"></div>
     </div>
-    <h3>Where it lives</h3>
+    <h3>Where it lives <small>(click the photo to see the object)</small></h3>
     <img id="dPhoto" alt="">
   </dialog>
 
   <!-- Object popup: photos, your context text, and the stickers on it -->
   <dialog id="objDetail">
-    <button id="objClose" aria-label="Close">×</button>
+    <button id="objClose" class="x" aria-label="Close">×</button>
     <div id="objBody"></div>
   </dialog>
 
