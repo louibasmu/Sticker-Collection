@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ben's Sticker Collection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Sticker Collection</h1>
+    <p id="count"></p>
+  </header>
+
+  <!-- Toggle between the two views -->
+  <div class="toggle" role="group" aria-label="View">
+    <button id="viewStickers" class="active">Stickers</button>
+    <button id="viewObjects">Objects</button>
+  </div>
+
+  <!-- Controls: search box + two dropdown filters -->
+  <section class="controls">
+    <input id="search" type="search" placeholder="Search name, text, company…">
+    <select id="objectFilter"><option value="">All objects</option></select>
+    <select id="seriesFilter"><option value="">All series</option></select>
+  </section>
+
+  <!-- The grid of sticker cards gets filled in by app.js -->
+  <main id="grid"></main>
+
+  <!-- Detail popup (hidden until you click a card) -->
+  <dialog id="detail">
+    <button id="close" aria-label="Close">×</button>
+    <div class="detail-body">
+      <img id="dSticker" alt="">
+      <div id="dInfo"></div>
+    </div>
+    <h3>Where it lives</h3>
+    <img id="dPhoto" alt="">
+  </dialog>
+
+  <!-- Object popup: photos, your context text, and the stickers on it -->
+  <dialog id="objDetail">
+    <button id="objClose" aria-label="Close">×</button>
+    <div id="objBody"></div>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="objects.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

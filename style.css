@@ -1,0 +1,55 @@
+:root { --accent: #e8590c; --bg: #faf7f2; --ink: #222; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; background: var(--bg); color: var(--ink); }
+header { padding: 1.5rem 1rem 0; text-align: center; }
+header h1 { margin: 0; }
+#count { color: #666; }
+
+.controls { display: flex; gap: .5rem; flex-wrap: wrap; justify-content: center; padding: 1rem; }
+.controls input, .controls select { padding: .6rem .8rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 8px; }
+.controls input { flex: 1 1 260px; max-width: 420px; }
+
+/* CSS Grid: as many 170px+ columns as fit */
+#grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 1rem; padding: 1rem; }
+.card { background: #fff; border-radius: 12px; overflow: hidden; cursor: pointer;
+        box-shadow: 0 1px 4px #0002; transition: transform .15s; position: relative; }
+.card:hover { transform: scale(1.05); box-shadow: 0 6px 16px #0003; z-index: 1; }
+.card .thumb { height: 150px; background: #eee; display: flex; align-items: center; justify-content: center; }
+/* object-fit: contain keeps the sticker's proportions (no stretching!) */
+.card img { width: 100%; height: 100%; object-fit: contain; }
+.card .noimg { color: #999; font-size: .8rem; padding: 1rem; text-align: center; }
+.card .label { padding: .5rem .6rem .7rem; font-size: .85rem; }
+.card .label small { display: block; color: #777; margin-top: .2rem; }
+.badge { position: absolute; top: 6px; right: 6px; background: var(--accent); color: #fff;
+         font-size: .7rem; padding: 2px 6px; border-radius: 99px; }
+
+dialog { width: min(900px, 94vw); max-height: 92vh; border: 0; border-radius: 14px; padding: 1.2rem; }
+dialog::backdrop { background: #000a; }
+#close { position: absolute; top: .4rem; right: .8rem; font-size: 2rem; background: none; border: 0; cursor: pointer; }
+.detail-body { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+#dSticker { width: 300px; max-width: 100%; max-height: 320px; object-fit: contain; background: #eee; border-radius: 10px; }
+#dInfo { flex: 1 1 280px; }
+#dInfo h2 { margin-top: 0; }
+#dInfo dt { font-weight: 600; color: #666; font-size: .8rem; margin-top: .6rem; }
+#dInfo dd { margin: 0; }
+#dPhoto { width: 100%; max-height: 60vh; object-fit: contain; background: #eee; border-radius: 10px; }
+
+/* View toggle */
+.toggle { display: flex; justify-content: center; margin-top: 1rem; }
+.toggle button { padding: .6rem 1.6rem; font-size: 1rem; border: 1px solid var(--accent); background: #fff; color: var(--accent); cursor: pointer; }
+.toggle button:first-child { border-radius: 8px 0 0 8px; }
+.toggle button:last-child { border-radius: 0 8px 8px 0; border-left: 0; }
+.toggle button.active { background: var(--accent); color: #fff; }
+
+/* Object cards are bigger than sticker cards */
+#grid.objects { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+#grid.objects .card .thumb { height: 240px; }
+
+/* Object popup */
+#objBody h2 { margin-top: 0; }
+.photos { display: flex; flex-direction: column; gap: .8rem; }
+.photos img { width: 100%; max-height: 70vh; object-fit: contain; background: #eee; border-radius: 10px; }
+.context { white-space: pre-wrap; }
+.mini { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: .5rem; }
+.mini div { cursor: pointer; font-size: .7rem; text-align: center; }
+.mini img { width: 100%; height: 80px; object-fit: contain; background: #eee; border-radius: 6px; }
