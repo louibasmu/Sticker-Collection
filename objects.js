@@ -123,7 +123,10 @@ const OBJECTS = [
  {
   "name": "MacBook",
   "photos": [
-   "macbook"
+   "macbook",
+   "macbook_keyboard",
+   "macbook_k_key",
+   "macbook_happiness_project"
   ],
   "context": "The macbook used to be covered with stickers with the cover, but since then I ditched the cover and wanted a more simplistic vibe. I used the argonne sticker to share with others the intership I had this past Summer. The duck I feel connected to as it reminds me of my childhood.",
   "date": "Fall 2026 (senior year at K)",
